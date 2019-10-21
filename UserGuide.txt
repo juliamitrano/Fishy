@@ -1,0 +1,24 @@
+Fishy
+
+Goal: Eat all the fish you can and become the biggest fish in the pond.
+
+Instructions:
+	•	Move to other fish to eat them.
+	•	Eating fish will make you bigger.
+	•	Win by being the biggest fish in the pond.
+
+Rules:
+	•	You must be bigger than a fish to eat it.
+	•	Fish can eat you too so BE CAREFUL.
+	•	You will lose if you get eaten.
+
+Controls(Keyboard):
+
+	“Right” - move right
+	“Left” - move left
+	“Up” - move up
+	“Down” - move down
+	“X” - quit game
+
+
+	

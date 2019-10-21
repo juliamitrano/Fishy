@@ -1,0 +1,107 @@
+IFishy Interface contains the methods:
+fishImage creates an image of the fish.
+moveFishy takes a key as a Strong and moves the fish accordingly to the imputed key.
+randomMove takes an int n and randomly moves the fish randomly.
+touches takes a that of AFishy. It returns true or false if the fish is touching that fish.
+outsideBounds takes a width and a height as 2 ints. This function moves a fish to the opposite side if the fish is out of bounds.
+eats takes that Fish. It returns true or false if the fish can eat the other fish.
+playerEat takes a list of other fishes. It is used to see which fish the player eats.
+
+The abstract class AFishy implements the interface IFishy.
+The parameters AFishy includes are the size which is an int. color which is part of the Color class. A posn which is part of the Post class and alive which is a boolean.
+
+Thus the constructor for AFishy is int s, Color c, Posn p, and boolean a.
+
+In this class:
+fishImage returns a new rectangle of this.size, this.size (height and width) “solid” and this.color.
+moveFishy doesn’t return anything in this class.
+randomMove doesn’t return anything in this abstract class.
+touches returns true if this.posn.x >= that.post.x - that.size / 2 AND that.posn.x <= that.posn.x +size/2 AND this.pos.y >= that.pos.y - that.size / 2 && this.pos.y <= that.pos.y + that.size / 2. It returns false if this statement is not true.
+outsideBounds doesn’t return anything in this abstract class.
+playerEat doesn’t return anything in this abstract class.
+
+The class Player extends AFishy.
+It’s parameters are the same as AFishy.
+
+moveFishy moves player. It checks if the key equals right and moves the player by + 5 if it is right. It checks if the key equals left and moves the player by - 5 if it is left. It checks if the key equals up and moves the player by + 5 in the y direction if it is up. It checks if the key equals down and moves the player by - 5 in the y direction if it is down.
+
+randomMove returns itself.
+
+outsideBounds moves the player to the other side if its position is greater than the with. Else it returns itself. It does the same for all sides of the screen (left right top bottom).
+
+playerEat passes the fish to the list and if any of the fish are touching it adds the eaten fish to the list of other eaten fish.
+
+The class BackgroundFishy extends AFishy and has the same perimeters of AFishy.
+
+fishImage returns a new rectangle of this.size, this.size (height and width) “solid” and this.color.
+moveFishy returns itself in this class.
+randomMove moves the fish to a random spot on the background and creates a new posn for the fish’s location.
+randomInt returns a random integer used for the randomMove method.
+outsideBounds moves the fish if it’s x posn is greater than the with. It does the same for all sides of the background (x for left and right) (y for up and down)
+playerEats returns itself in this class.
+
+the interface IloFishy contains the methods:
+WorldImage draw fishy which creates an image of all the fish.
+randomMove takes int N and randomly moves all of the fish.
+touches checks if a fish is touching that fish. It returns true or false.
+eat returns a new player if the player eats any of these fish.
+isBiggest sees if the fish is bigger than all these fish. It returns true of false.
+unEaten returns all of the uneaten fishes and takes the player.
+platerEaten checks if the player has been eaten. It takes the player and returns true or false.
+
+The class MtLoFishy implements ILoFishy:
+
+drawFishy returns and emptyImage.
+
+randomMove takes an int and returns this. No fish actually move in this method of this class.
+
+touches takes that fish and returns false since no fish touch that fish in this method of this class.
+
+eat takes a Player and returns the player since there are no fish to eat.
+
+isBigger takes a player and returns true since there are no other fish to compare it to.
+
+unEaten takes a player returns this since there are no fish to eat.
+
+playerEaten takes a player and returns false since there are no fish to eat the player.
+
+The ConsLoFishy class implements ILoFishy and contains the parameters AfFishy first and ILoFishy rest.
+
+Thus the constructor is AFishy f and ILoFishy r.
+
+drawFishy returns a new world image of all of the fish. It overlays the first fish over the posn then draws the rest of the fish list.
+
+randomMove takes int n and randomly moves all of the list of fish.
+touches takes that and returns true if the fish is touching that fish and it is of a bigger size.
+
+eat takes a player and returns a new player of the size of the player plus the size of the fish. If the player eats one of this fish it puts the eaten fish in the list of eaten fish.
+
+isBigger than checks if the player’s size is greater than the list of fish size. It checks the fish then the rest of the fish.
+
+unEaten takes the player and returns a new list of all of the uneaten fish.
+
+playerEaten takes a player and returns true if the fish eats the player.
+
+the class FishyGame extends World.
+It’s parameters are width = the int 500, the height = the int 500. player which is of type AFishy otherFish which is a ILoFishy.
+
+Thus the constructor is AFishy [, IloFishy of.
+
+onKeyEvent takes a key as a string. if the key equals x it ends the world and returns the string “Byeeeee”.
+
+onTick returns a new FishyGame every minute and returns the game and gives the int 5 to the randomMove function for the other fish.
+
+makeScene returns creates a scene. It returns an empty scene and the fish at this.player.posn.x and y. it also places the other uneaten fish.
+
+lastScene is the ending scene of the game it takes String s and displays and ending image of color Red and size 100 x 40.
+
+worldEnds stops the game if the player is eaten or if the player is the biggest fish. If it gets to the else statement the method is false and the game continues.
+
+
+
+ 
+
+
+
+
+
