@@ -1,3 +1,5 @@
+//Created by Julia Mitrano and Thomas Gringle
+
 import javalib.worldimages.*; // images, like RectangleImage or OverlayImages
 import tester.Tester;
 import javalib.funworld.*; // the abstract World class and the big-bang library
